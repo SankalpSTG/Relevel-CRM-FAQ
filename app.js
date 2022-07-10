@@ -25,6 +25,18 @@ app.get("/errorhandling", (req, res) => {
     }
 })
 
+/**
+ * Q. What is the difference between GET request and POST request?
+ */
+app.get("/getrequestexample", (req, res) => {
+    var userid = req.query.userid
+    res.send(userid)
+})
+app.get("/postrequestexample", (req, res) => {
+    var userid = req.body.userid
+    res.send(userid)
+})
+
 app.listen(4000, () => {
     console.log("Server started at port 4000")
 })
