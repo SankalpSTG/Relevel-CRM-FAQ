@@ -13,6 +13,7 @@ async function authenticate(req, res, nex){
         if(err) return res.status(403).send(errorActions.failedToAuthenticate)
         //Here you can validate your user data extracted from token.
         req.body.userId = user.serial_id
+        req.body.userType = user.user_type
         nex()        
     })
 }
